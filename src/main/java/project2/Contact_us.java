@@ -11,10 +11,11 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
-@SuppressWarnings("serial")
-@WebServlet("/Mdel")
-public class Delete_Manager extends HttpServlet {
+@WebServlet("/cont")
+public class Contact_us extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 	Connection con;
 	   public void init(ServletConfig config) {
 		   try {
@@ -23,22 +24,31 @@ public class Delete_Manager extends HttpServlet {
 			} catch (Exception e) {
 				 e.printStackTrace();
 			}
-	   }  
+	   }
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			String s1 = request.getParameter("id");
-			PreparedStatement ps = con.prepareStatement("delete from ManagerDetail1 where Manager_ID=?");
-			ps.setString(1, s1);
-			ps.execute();
-			PrintWriter pw = response.getWriter();
-			pw.println("<body bgcolor=\"#87CEEB\">");
-			pw.println("<h1>data deleted succesfully</h1>");
-			 pw.println("<br>");
-			 pw.println("<br>");
-			pw.println(" <a href=\"admin_login.html\">Go Back</a>");
+		 String s1=request.getParameter("name");
+		 String s2=request.getParameter("email");
+		 String s3=request.getParameter("Phone");
+		 String s4=request.getParameter("message");
+		 PreparedStatement ps= con.prepareStatement("insert into  Contact1 values(?,?,?,?)");
+		 ps.setString(1,s1);
+		 ps.setString(2,s2);
+		 ps.setString(3,s3);
+		 ps.setString(4,s4);
+		  ps.executeQuery();
+		
+		  PrintWriter pw=response.getWriter();
+		 pw.println("<body bgcolor=\"#87CEEB\"><body>");
+		  pw.println("<center>");
+		  pw.println("<h1>message has been send  succesfully<h1>");
+		  pw.println("</center>");
+		  
 		} catch (Exception e) {
 			 e.printStackTrace();
 		}
+		 
 	}
-	}
+	
 
+}

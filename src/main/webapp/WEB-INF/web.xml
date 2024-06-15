@@ -179,4 +179,24 @@
     <servlet-name>EmployeeE_View</servlet-name>
     <url-pattern>/EmployeeE_View</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Contact_us</display-name>
+    <servlet-name>Contact_us</servlet-name>
+    <servlet-class>project2.Contact_us</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Contact_us</servlet-name>
+    <url-pattern>/Contact_us</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Contact_UsView</display-name>
+    <servlet-name>Contact_UsView</servlet-name>
+    <servlet-class>project2.Contact_UsView</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Contact_UsView</servlet-name>
+    <url-pattern>/Contact_UsView</url-pattern>
+  </servlet-mapping>
 </web-app>

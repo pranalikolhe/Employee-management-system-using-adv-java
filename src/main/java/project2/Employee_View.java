@@ -31,7 +31,7 @@ public class Employee_View extends HttpServlet {
 		try {
 			 PreparedStatement ps=con.prepareStatement("select * from EmployeeDetail1");
 		 ResultSet rs=ps.executeQuery();
-		
+		 response.setContentType("text/html");
 		 ArrayList<EmployeeBean> a=new ArrayList<EmployeeBean>();
 		 while(rs.next()) {
 			 //b=null;
@@ -56,11 +56,16 @@ public class Employee_View extends HttpServlet {
 			  a.add(b);
 		 }
 		 PrintWriter pw=response.getWriter();
+		 pw.println("<body bgcolor=\"#87CEEB\">");
 		 pw.println("data is:");
+		 pw.println("<br>");
 		 Iterator<EmployeeBean> i=a.iterator();
 		 while(i.hasNext()){
 		 pw.println(i.next());
-		 pw.println(" <a href=\"admin_login.html\">Go Back</a>");}
+		 pw.println("<br>");
+		 }
+		 pw.println("<br>");
+		 pw.println("<a href=\"login.html\">Go Back</a>");
 		} catch (Exception e) {
 			 e.printStackTrace();
 		}

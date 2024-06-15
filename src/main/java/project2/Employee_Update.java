@@ -34,7 +34,10 @@ public class Employee_Update extends HttpServlet {
 			ps.setString(1, s1);
 			ps.execute();                                  
 			PrintWriter pw=response.getWriter();
+			pw.println("<body bgcolor=\"#87CEEB\">");
 		 pw.println("<h1>data  update succesfully</h1>");
+		 pw.println("<br>");
+		 pw.println("<br>");
 		 pw.println(" <a href=\" home.html\">Go Back</a>");
 		} catch (Exception e) {
 			 e.printStackTrace();

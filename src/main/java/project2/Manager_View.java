@@ -57,11 +57,15 @@ public class Manager_View extends HttpServlet {
 			  a.add(b);
 		 }
 		 PrintWriter pw=response.getWriter();
+		 pw.println("<body bgcolor=\"#87CEEB\">");
 		 pw.println("data is:");
+		 pw.println("<br>");
 		 Iterator<ManagerBean> i=a.iterator();
 		 while(i.hasNext()){
-		 pw.println(i.next());}
-		 pw.println(" <a href=\"admin_login.html\">Go Back</a>");
+		 pw.println(i.next());
+		 pw.println("<br>");}
+		 pw.println("<br>");
+		 pw.println("<a href=\"admin_login.html\">Go Back</a>");
 		} catch (Exception e) {
 			 e.printStackTrace();
 		}

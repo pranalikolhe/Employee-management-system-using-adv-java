@@ -31,7 +31,10 @@ public class Delete_Employee extends HttpServlet {
 			ps.setString(1, s1);
 			ps.execute();
 			PrintWriter pw = response.getWriter();
+			pw.println("<body bgcolor=\"#87CEEB\">");
 			pw.println("<h1>data deleted succesfully</h1>");
+			 pw.println("<br>");
+			 pw.println("<br>");
 			pw.println(" <a href=\"admin_login.html\">Go Back</a>");
 		} catch (Exception e) {
 			 e.printStackTrace();

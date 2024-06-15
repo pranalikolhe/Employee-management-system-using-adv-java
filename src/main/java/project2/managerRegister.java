@@ -64,7 +64,10 @@ public class managerRegister extends HttpServlet {
 		 
 		 ps.executeQuery();
 		 PrintWriter pw=response.getWriter();
+		 pw.println("<body bgcolor=\"#87CEEB\">");
 		  pw.println("<h1>data entered succesfully<h1>");
+		  pw.println("<br>");
+		  pw.println("<br>");
 		  pw.println(" <a href=\"home.html\">Go Back</a>");
 		} catch (Exception e) {
 			 e.printStackTrace();
